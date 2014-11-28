@@ -11,9 +11,12 @@ Replacement for util.inspect and the console object.
 ```javascript
 var uninspected = require('uninspected');
 
-var str = uninspected({foo: 'bar'}); // "{ foo: 'bar' }"
+var str = uninspected.inspect({foo: 'bar'}); // "{ foo: 'bar' }"
 
-uninspected.log('foo', {bar: /hey/});
+uninspected.log('foo', {bar: /hey/}); // { bar: /hey }
+
+// Or use this shorthand:
+uninspected('foo', {bar: /hey/}); // { bar: /hey }
 ```
 
 Also includes diffing support:

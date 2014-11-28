@@ -19,6 +19,16 @@ uninspected.log('foo', {bar: /hey/}); // { bar: /hey }
 uninspected('foo', {bar: /hey/}); // { bar: /hey }
 ```
 
+You can also use it instead of the console object:
+
+```javascript
+var console = require('uninspected');
+
+console.log('...');
+
+console.trace();
+```
+
 Also includes diffing support:
 
 ```javascript

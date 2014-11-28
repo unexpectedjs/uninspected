@@ -1,0 +1,44 @@
+{
+  "name": "uninspected",
+  "version": "1.0.0",
+  "description": "util.inspect replacement based on Unexpected's output and type system",
+  "main": "index.js",
+  "dependencies": {
+    "magicpen-prism": "0.2.0",
+    "unexpected": "5.0.0-beta22"
+  },
+  "devDependencies": {
+    "coveralls": "2.11.2",
+    "istanbul": "0.3.2",
+    "jshint": "2.5.10",
+    "mocha": "2.0.1",
+    "sinon": "1.12.1",
+    "unexpected": "5.0.0-beta22",
+    "unexpected-sinon": "3.0.2"
+  },
+  "scripts": {
+    "lint": "jshint .",
+    "test": "mocha && npm run lint",
+    "travis": "npm test && npm run coverage && <coverage/lcov.info coveralls",
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/papandreou/uninspected.git"
+  },
+  "keywords": [
+    "util",
+    "inspect",
+    "object",
+    "depth",
+    "color",
+    "types"
+  ],
+  "main": "./lib/uninspected",
+  "author": "Andreas Lind <andreas@one.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/papandreou/uninspected/issues"
+  },
+  "homepage": "https://github.com/papandreou/uninspected"
+}

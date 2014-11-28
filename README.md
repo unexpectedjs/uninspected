@@ -13,10 +13,10 @@ var uninspected = require('uninspected');
 
 var str = uninspected.inspect({foo: 'bar'}); // "{ foo: 'bar' }"
 
-uninspected.log('foo', {bar: /hey/}); // { bar: /hey }
+uninspected.log('foo', {bar: /hey/}); // { bar: /hey/ }
 
 // Or use this shorthand:
-uninspected('foo', {bar: /hey/}); // { bar: /hey }
+uninspected('foo', {bar: /hey/}); // { bar: /hey/ }
 ```
 
 You can also use it instead of the console object:

@@ -1,4 +1,4 @@
-/*global describe, it, console*/
+/*global describe, it, console, beforeEach, afterEach*/
 
 var uninspected = require('../lib/uninspected'),
     unexpected = require('unexpected'),
@@ -9,7 +9,7 @@ describe('uninspected', function () {
 
     describe('#inspect', function () {
         it('should produce colored output', function () {
-            expect(uninspected.inspect({foo: 'abc'}), 'to equal', "{ foo: \x1B[36m\x1B[38;5;44m'abc'\x1B[39m }");
+            expect(uninspected.inspect({foo: 'abc'}), 'to equal', '{ foo: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }');
         });
 
         it('should have a default depth of 4', function () {
@@ -43,14 +43,14 @@ describe('uninspected', function () {
         it('should log with colors if told to', function () {
             uninspected.outputFormat = 'ansi';
             uninspected.log('abc', {foo: 'abc'});
-            expect(console.log.args[0], 'to equal', ["abc { foo: \x1B[36m\x1B[38;5;44m'abc'\x1B[39m }"]);
+            expect(console.log.args[0], 'to equal', ['abc { foo: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }']);
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
         });
 
         it('should log without colors if told to', function () {
             uninspected.outputFormat = 'text';
             uninspected.log('abc', {foo: 'abc'});
-            expect(console.log.args[0], 'to equal', ["abc { foo: 'abc' }"]);
+            expect(console.log.args[0], 'to equal', ['abc { foo: \'abc\' }']);
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
         });
     });
@@ -64,11 +64,11 @@ describe('uninspected', function () {
             uninspected.outputFormat = 'text';
             uninspected.diff({foo: 'bar'}, {foo: 'baz'});
             expect(console.log, 'was called with',
-                "{\n" +
-                "  foo: 'bar' // should be 'baz'\n" +
-                "             // -bar\n" +
-                "             // +baz\n" +
-                "}"
+                '{\n' +
+                '  foo: \'bar\' // should be \'baz\'\n' +
+                '             // -bar\n' +
+                '             // +baz\n' +
+                '}'
             );
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
         });

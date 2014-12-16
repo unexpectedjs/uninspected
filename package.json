@@ -2,12 +2,14 @@
   "name": "uninspected",
   "version": "1.0.0",
   "description": "util.inspect replacement based on Unexpected's output and type system",
-  "main": "index.js",
+  "main": "./lib/uninspected.js",
   "dependencies": {
     "magicpen-prism": "0.2.0",
     "unexpected": "5.0.0-beta22"
   },
   "devDependencies": {
+    "browserify": "^5.9.1",
+    "bundle-collapser": "^1.1.0",
     "coveralls": "2.11.2",
     "istanbul": "0.3.2",
     "jshint": "2.5.10",
@@ -19,7 +21,8 @@
     "lint": "jshint .",
     "test": "mocha && npm run lint",
     "travis": "npm test && npm run coverage && <coverage/lcov.info coveralls",
-    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot"
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot",
+    "prepublish": "browserify -p bundle-collapser/plugin -e ./lib/uninspected.js -s uninspected -b > uninspected.js"
   },
   "repository": {
     "type": "git",

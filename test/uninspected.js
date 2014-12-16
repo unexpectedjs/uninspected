@@ -6,18 +6,25 @@ var uninspected = require('../lib/uninspected'),
 
 describe('uninspected', function () {
     var expect = unexpected.clone().installPlugin(require('unexpected-sinon'));
+    var originalOutputFormat = uninspected.outputFormat;
+
+    afterEach(function () {
+        uninspected.outputFormat = originalOutputFormat;
+    });
 
     describe('#inspect', function () {
         it('should produce colored output', function () {
-            expect(uninspected.inspect({foo: 'abc'}), 'to equal', '{ foo: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }');
+            expect(uninspected.inspect({foo: 'abc'}), 'to equal', '{ \x1B[90m\x1B[38;5;242mfoo\x1B[39m: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }');
         });
 
         it('should have a default depth of 4', function () {
+            uninspected.outputFormat = 'text';
             expect(uninspected.inspect({foo: {foo: {foo: {foo: {foo: {foo: 123}}}}}}), 'to equal', '{ foo: { foo: { foo: { foo: { foo: ... } } } } }');
         });
     });
 
     it('should be a shorthand for uninspected.log', function () {
+        uninspected.outputFormat = 'text';
         sinon.stub(console, 'log');
         uninspected('abc', {foo: true});
         expect(console.log, 'was called with', 'abc { foo: true }');
@@ -25,16 +32,12 @@ describe('uninspected', function () {
     });
 
     describe('#log', function () {
-        var originalOutputFormat = uninspected.outputFormat;
         beforeEach(function () {
             sinon.stub(console, 'log');
         });
 
-        afterEach(function () {
-            uninspected.outputFormat = originalOutputFormat;
-        });
-
         it('should log to the console', function () {
+            uninspected.outputFormat = 'text';
             uninspected.log('abc', {foo: true});
             expect(console.log, 'was called with', 'abc { foo: true }');
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
@@ -43,7 +46,7 @@ describe('uninspected', function () {
         it('should log with colors if told to', function () {
             uninspected.outputFormat = 'ansi';
             uninspected.log('abc', {foo: 'abc'});
-            expect(console.log.args[0], 'to equal', ['abc { foo: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }']);
+            expect(console.log.args[0], 'to equal', ['abc { \x1B[90m\x1B[38;5;242mfoo\x1B[39m: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }']);
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
         });
 

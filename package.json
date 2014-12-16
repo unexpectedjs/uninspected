@@ -1,8 +1,8 @@
 {
   "name": "uninspected",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "util.inspect replacement based on Unexpected's output and type system",
-  "main": "./lib/uninspected.js",
+  "main": "./lib/uninspected",
   "dependencies": {
     "magicpen-prism": "0.2.0",
     "unexpected": "5.0.0-beta22"
@@ -36,7 +36,6 @@
     "color",
     "types"
   ],
-  "main": "./lib/uninspected",
   "author": "Andreas Lind <andreas@one.com>",
   "license": "BSD",
   "bugs": {

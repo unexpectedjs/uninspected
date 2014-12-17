@@ -17,9 +17,14 @@ describe('uninspected', function () {
             expect(uninspected.inspect({foo: 'abc'}), 'to equal', '{ \x1B[90m\x1B[38;5;242mfoo\x1B[39m: \x1B[36m\x1B[38;5;44m\'abc\'\x1B[39m }');
         });
 
-        it('should have a default depth of 4', function () {
+        it('should have a default depth of 6', function () {
             uninspected.outputFormat = 'text';
-            expect(uninspected.inspect({foo: {foo: {foo: {foo: {foo: {foo: 123}}}}}}), 'to equal', '{ foo: { foo: { foo: { foo: { foo: ... } } } } }');
+            expect(uninspected.inspect({foo: {foo: {foo: {foo: {foo: {foo: {foo: {foo: 123}}}}}}}}), 'to equal',
+                '{\n' +
+                '  foo: {\n' +
+                '    foo: { foo: { foo: { foo: { foo: { foo: ... } } } } }\n' +
+                '  }\n' +
+                '}');
         });
     });
 

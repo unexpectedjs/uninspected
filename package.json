@@ -4,9 +4,9 @@
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {
-    "magicpen": "4.1.0",
+    "magicpen": "4.2.0",
     "magicpen-prism": "1.0.0",
-    "unexpected": "5.1.0"
+    "unexpected": "5.5.0"
   },
   "devDependencies": {
     "browserify": "^5.9.1",

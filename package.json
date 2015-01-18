@@ -23,7 +23,9 @@
     "test": "mocha && npm run lint",
     "travis": "npm test && npm run coverage && <coverage/lcov.info coveralls",
     "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot",
-    "prepublish": "browserify -p bundle-collapser/plugin -e ./lib/uninspected.js -s uninspected -b > uninspected.js"
+    "browserify": "browserify -p bundle-collapser/plugin -e ./lib/uninspected.js -s uninspected -b > uninspected.js",
+    "bookmarklet": "(echo -n '<!DOCTYPE html><html><body><a href=\"javascript:' && < uninspected.js uglifyjs -m -c | sed -e 's/&/\\&amp;/g;' | sed -e 's/\"/\\&quot;/g;' | tr --delete '\\n' && echo -n ';console=uninspected;void(null);\">Bookmarklet: Replace the console object with uninspected</a></body></html>') > bookmarklet.html",
+    "prepublish": "npm run browserify && npm run bookmarklet"
   },
   "repository": {
     "type": "git",

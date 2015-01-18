@@ -19,6 +19,17 @@ uninspected.log('foo', {bar: /hey/}); // { bar: /hey/ }
 uninspected('foo', {bar: /hey/}); // { bar: /hey/ }
 ```
 
+The library also includes diffing support (powered by Unexpected's diffing engine):
+
+```javascript
+uninspected.diff({foo: 'bar'}, {foo: 'baz'});
+{
+  foo: 'bar' // should be 'baz'
+             // -bar
+             // +baz
+}
+```
+
 You can also use it instead of the console object:
 
 ```javascript
@@ -29,13 +40,6 @@ console.log('...');
 console.trace();
 ```
 
-Also includes diffing support:
+In the Chrome console this will produce colored output using [this API](https://developer.chrome.com/devtools/docs/console#styling-console-output-with-css).
 
-```javascript
-uninspected.diff({foo: 'bar'}, {foo: 'baz'});
-{
-  foo: 'bar' // should be 'baz'
-             // -bar
-             // +baz
-}
-```
+The `uninspected` npm package includes a bookmarklet for doing the above, ie. replacing the `console` object with uninspected, see `bookmarklet.html` at the root of the package. Unfortunately github doesn't permit putting it directly into this README.

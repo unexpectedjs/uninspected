@@ -80,5 +80,15 @@ describe('uninspected', function () {
             );
             console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
         });
+
+        it('should do something reasonable when diffing primitive values with no specific built-in diff', function () {
+            uninspected.outputFormat = 'text';
+            uninspected.diff(123, 456);
+            expect(console.log, 'was called with',
+                '-123\n' +
+                '+456'
+            );
+            console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
+        });
     });
 });

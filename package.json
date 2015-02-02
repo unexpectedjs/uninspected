@@ -6,7 +6,7 @@
   "dependencies": {
     "magicpen": "4.2.0",
     "magicpen-prism": "1.0.0",
-    "unexpected": "5.5.0"
+    "unexpected": "5.8.1"
   },
   "devDependencies": {
     "browserify": "^5.9.1",

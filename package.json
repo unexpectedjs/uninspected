@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/papandreou/uninspected.git"
+    "url": "git://github.com/unexpectedjs/uninspected.git"
   },
   "keywords": [
     "util",
@@ -43,7 +43,7 @@
   "author": "Andreas Lind <andreas@one.com>",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/papandreou/uninspected/issues"
+    "url": "https://github.com/unexpectedjs/uninspected/issues"
   },
-  "homepage": "https://github.com/papandreou/uninspected"
+  "homepage": "https://github.com/unexpectedjs/uninspected"
 }

@@ -4,9 +4,9 @@ uninspected
 Replacement for util.inspect and the console object.
 
 [![NPM version](https://badge.fury.io/js/messy.png)](http://badge.fury.io/js/uninspected)
-[![Build Status](https://travis-ci.org/papandreou/uninspected.png)](https://travis-ci.org/papandreou/uninspected)
-[![Coverage Status](https://coveralls.io/repos/papandreou/uninspected/badge.png)](https://coveralls.io/r/papandreou/uninspected)
-[![Dependency Status](https://david-dm.org/papandreou/uninspected.png)](https://david-dm.org/papandreou/uninspected)
+[![Build Status](https://travis-ci.org/unexpectedjs/uninspected.png)](https://travis-ci.org/unexpectedjs/uninspected)
+[![Coverage Status](https://coveralls.io/repos/unexpectedjs/uninspected/badge.png)](https://coveralls.io/r/unexpectedjs/uninspected)
+[![Dependency Status](https://david-dm.org/unexpectedjs/uninspected.png)](https://david-dm.org/unexpectedjs/uninspected)
 
 ```javascript
 var uninspected = require('uninspected');

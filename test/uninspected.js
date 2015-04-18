@@ -20,11 +20,7 @@ describe('uninspected', function () {
         it('should have a default depth of 6', function () {
             uninspected.outputFormat = 'text';
             expect(uninspected.inspect({foo: {foo: {foo: {foo: {foo: {foo: {foo: {foo: 123}}}}}}}}), 'to equal',
-                '{\n' +
-                '  foo: {\n' +
-                '    foo: { foo: { foo: { foo: { foo: { foo: ... } } } } }\n' +
-                '  }\n' +
-                '}');
+                   "{ foo: { foo: { foo: { foo: { foo: { foo: { foo: ... } } } } } } }");
         });
     });
 

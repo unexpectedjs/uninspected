@@ -6,7 +6,7 @@
   "dependencies": {
     "magicpen": "4.3.5",
     "magicpen-prism": "1.1.1",
-    "unexpected": "6.0.3"
+    "unexpected": "7.0.0"
   },
   "devDependencies": {
     "browserify": "^5.9.1",
@@ -15,9 +15,9 @@
     "istanbul": "0.3.2",
     "jshint": "2.5.10",
     "mocha": "2.0.1",
-    "sinon": "1.12.1",
-    "unexpected": "5.10.0",
-    "unexpected-sinon": "5.1.1"
+    "sinon": "1.14.1",
+    "unexpected": "7.0.0",
+    "unexpected-sinon": "5.1.2"
   },
   "scripts": {
     "lint": "jshint .",

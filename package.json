@@ -16,7 +16,6 @@
     "jshint": "2.5.10",
     "mocha": "2.0.1",
     "sinon": "1.14.1",
-    "unexpected": "7.0.0",
     "unexpected-sinon": "5.1.2"
   },
   "scripts": {

@@ -4,19 +4,18 @@
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {
-    "magicpen": "4.3.5",
     "magicpen-prism": "1.1.1",
-    "unexpected": "7.0.0"
+    "unexpected": "9.16.1"
   },
   "devDependencies": {
-    "browserify": "^5.9.1",
-    "bundle-collapser": "^1.1.0",
-    "coveralls": "2.11.2",
-    "istanbul": "0.3.2",
-    "jshint": "2.5.10",
-    "mocha": "2.0.1",
-    "sinon": "1.14.1",
-    "unexpected-sinon": "5.1.2"
+    "browserify": "11.2.0",
+    "bundle-collapser": "1.2.1",
+    "coveralls": "2.11.4",
+    "istanbul": "0.3.22",
+    "jshint": "2.8.0",
+    "mocha": "2.3.3",
+    "sinon": "1.17.1",
+    "unexpected-sinon": "7.3.0"
   },
   "scripts": {
     "lint": "jshint .",

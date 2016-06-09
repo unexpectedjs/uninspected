@@ -4,8 +4,8 @@
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {
-    "magicpen-prism": "1.1.1",
-    "unexpected": "9.16.1"
+    "magicpen-prism": "2.2.1",
+    "unexpected": "10.13.3"
   },
   "devDependencies": {
     "browserify": "11.2.0",
@@ -17,7 +17,7 @@
     "mocha": "2.3.3",
     "sinon": "1.17.1",
     "uglify-js": "^2.6.2",
-    "unexpected-sinon": "7.3.0"
+    "unexpected-sinon": "10.2.1"
   },
   "scripts": {
     "lint": "eslint .",

@@ -16,6 +16,7 @@
     "istanbul": "0.3.22",
     "mocha": "2.3.3",
     "sinon": "1.17.1",
+    "uglify-js": "^2.6.2",
     "unexpected-sinon": "7.3.0"
   },
   "scripts": {

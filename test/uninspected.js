@@ -67,24 +67,35 @@ describe('uninspected', function () {
         it('should log without colors if told to', function () {
             uninspected.outputFormat = 'text';
             uninspected.diff({foo: 'bar'}, {foo: 'baz'});
-            expect(console.log.args[0], 'to equal', [
-                '{\n' +
-                '  foo: \'bar\' // should equal \'baz\'\n' +
-                '             // -bar\n' +
-                '             // +baz\n' +
-                '}'
-            ]);
-            console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
+            try {
+                expect(console.log, 'to have calls satisfying', function () {
+                    console.log(
+                        '{\n' +
+                        '  foo: \'bar\' // should equal \'baz\'\n' +
+                        '             //\n' +
+                        '             // -bar\n' +
+                        '             // +baz\n' +
+                        '}'
+                    );
+                });
+            } finally {
+                console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
+            }
         });
 
         it('should do something reasonable when diffing primitive values with no specific built-in diff', function () {
             uninspected.outputFormat = 'text';
             uninspected.diff(123, 456);
-            expect(console.log, 'was called with',
-                '-123\n' +
-                '+456'
-            );
-            console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
+            try {
+                expect(console.log, 'to have calls satisfying', function () {
+                    console.log(
+                        '-123\n' +
+                        '+456'
+                    );
+                });
+            } finally {
+                console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
+            }
         });
     });
 });

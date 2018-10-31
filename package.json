@@ -5,7 +5,7 @@
   "main": "./lib/uninspected",
   "dependencies": {
     "magicpen-prism": "2.2.1",
-    "unexpected": "10.37.2"
+    "unexpected": "10.39.1"
   },
   "devDependencies": {
     "browserify": "11.2.0",

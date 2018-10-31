@@ -1,3 +1,4 @@
-node_modules
-coverage
+/testdata/
+/node_modules/
+/coverage/
 /uninspected.js

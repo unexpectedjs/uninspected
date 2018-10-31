@@ -1,21 +1,21 @@
 /*global describe, it, console, beforeEach, afterEach*/
 
-var uninspected = require('../lib/uninspected');
+const uninspected = require('../lib/uninspected');
 
-var unexpected = require('unexpected');
+const unexpected = require('unexpected');
 
-var sinon = require('sinon');
+const sinon = require('sinon');
 
-describe('uninspected', function() {
-  var expect = unexpected.clone().installPlugin(require('unexpected-sinon'));
-  var originalOutputFormat = uninspected.outputFormat;
+describe('uninspected', () => {
+  const expect = unexpected.clone().installPlugin(require('unexpected-sinon'));
+  const originalOutputFormat = uninspected.outputFormat;
 
-  afterEach(function() {
+  afterEach(() => {
     uninspected.outputFormat = originalOutputFormat;
   });
 
-  describe('#inspect', function() {
-    it('should produce colored output', function() {
+  describe('#inspect', () => {
+    it('should produce colored output', () => {
       expect(
         uninspected.inspect({ foo: 'abc' }),
         'to equal',
@@ -23,7 +23,7 @@ describe('uninspected', function() {
       );
     });
 
-    it('should have a default depth of 6', function() {
+    it('should have a default depth of 6', () => {
       uninspected.outputFormat = 'text';
       expect(
         uninspected.inspect({
@@ -37,7 +37,7 @@ describe('uninspected', function() {
     });
   });
 
-  it('should be a shorthand for uninspected.log', function() {
+  it('should be a shorthand for uninspected.log', () => {
     uninspected.outputFormat = 'text';
     sinon.stub(console, 'log');
     uninspected('abc', { foo: true });
@@ -45,19 +45,19 @@ describe('uninspected', function() {
     console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
   });
 
-  describe('#log', function() {
-    beforeEach(function() {
+  describe('#log', () => {
+    beforeEach(() => {
       sinon.stub(console, 'log');
     });
 
-    it('should log to the console', function() {
+    it('should log to the console', () => {
       uninspected.outputFormat = 'text';
       uninspected.log('abc', { foo: true });
       expect(console.log, 'was called with', 'abc { foo: true }');
       console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
     });
 
-    it('should log with colors if told to', function() {
+    it('should log with colors if told to', () => {
       uninspected.outputFormat = 'ansi';
       uninspected.log('abc', { foo: 'abc' });
       expect(console.log.args[0], 'to equal', [
@@ -66,7 +66,7 @@ describe('uninspected', function() {
       console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
     });
 
-    it('should log without colors if told to', function() {
+    it('should log without colors if told to', () => {
       uninspected.outputFormat = 'text';
       uninspected.log('abc', { foo: 'abc' });
       expect(console.log.args[0], 'to equal', ["abc { foo: 'abc' }"]);
@@ -74,16 +74,16 @@ describe('uninspected', function() {
     });
   });
 
-  describe('#diff', function() {
-    beforeEach(function() {
+  describe('#diff', () => {
+    beforeEach(() => {
       sinon.stub(console, 'log');
     });
 
-    it('should log without colors if told to', function() {
+    it('should log without colors if told to', () => {
       uninspected.outputFormat = 'text';
       uninspected.diff({ foo: 'bar' }, { foo: 'baz' });
       try {
-        expect(console.log, 'to have calls satisfying', function() {
+        expect(console.log, 'to have calls satisfying', () => {
           console.log(
             '{\n' +
               "  foo: 'bar' // should equal 'baz'\n" +
@@ -98,11 +98,11 @@ describe('uninspected', function() {
       }
     });
 
-    it('should do something reasonable when diffing primitive values with no specific built-in diff', function() {
+    it('should do something reasonable when diffing primitive values with no specific built-in diff', () => {
       uninspected.outputFormat = 'text';
       uninspected.diff(123, 456);
       try {
-        expect(console.log, 'to have calls satisfying', function() {
+        expect(console.log, 'to have calls satisfying', () => {
           console.log('-123\n' + '+456');
         });
       } finally {

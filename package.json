@@ -4,7 +4,7 @@
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {
-    "magicpen-prism": "2.2.1",
+    "magicpen-prism": "2.4.0",
     "unexpected": "10.39.1"
   },
   "devDependencies": {

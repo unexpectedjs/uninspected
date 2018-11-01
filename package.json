@@ -17,7 +17,7 @@
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "prettier": "^1.14.3",
-    "sinon": "^1.17.1",
+    "sinon": "^7.1.0",
     "uglify-js": "^3.4.9",
     "unexpected-sinon": "^10.2.1"
   },

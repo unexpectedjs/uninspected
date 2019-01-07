@@ -1,9 +1,6 @@
 /*global describe, it, console, beforeEach, afterEach*/
-
 const uninspected = require('../lib/uninspected');
-
 const unexpected = require('unexpected');
-
 const sinon = require('sinon');
 
 describe('uninspected', () => {

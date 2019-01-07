@@ -1,6 +1,6 @@
 {
   "name": "uninspected",
-  "version": "1.10.0",
+  "version": "2.0.0",
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {

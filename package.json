@@ -19,7 +19,7 @@
     "prettier": "^1.14.3",
     "sinon": "^7.1.0",
     "uglify-js": "^3.4.9",
-    "unexpected-sinon": "^10.2.1"
+    "unexpected-sinon": "^10.11.0"
   },
   "scripts": {
     "lint": "eslint .",

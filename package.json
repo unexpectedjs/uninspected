@@ -27,8 +27,8 @@
     "ci": "npm test && npm run lint && npm run coverage",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
     "browserify": "browserify -p bundle-collapser/plugin -e ./lib/uninspected.js -s uninspected -b > uninspected.js",
-    "bookmarklet": "(echo -n '<!DOCTYPE html><html><body><a href=\"javascript:' && < uninspected.js uglifyjs -m -c | sed -e 's/&/\\&amp;/g;' | sed -e 's/\"/\\&quot;/g;' | tr --delete '\\n' && echo -n ';console=uninspected;void(null);\">Replace the console object with uninspected</a></body></html>') > bookmarklet.html",
-    "prepublish": "npm run browserify && npm run bookmarklet"
+    "bookmarklet": "npm run browserify && (echo -n '<!DOCTYPE html><html><body><a href=\"javascript:' && < uninspected.js uglifyjs -m -c | sed -e 's/&/\\&amp;/g;' | sed -e 's/\"/\\&quot;/g;' | tr --delete '\\n' && echo -n ';console=uninspected;void(null);\">Replace the console object with uninspected</a></body></html>') > bookmarklet.html",
+    "prepublishOnly": "npm run bookmarklet"
   },
   "repository": {
     "type": "git",

@@ -38,7 +38,7 @@ describe('uninspected', () => {
     uninspected.outputFormat = 'text';
     sinon.stub(console, 'log');
     uninspected('abc', { foo: true });
-    expect(console.log, 'was called with', 'abc { foo: true }');
+    expect(console.log, 'to have a call satisfying', ['abc { foo: true }']);
     console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
   });
 
@@ -50,7 +50,7 @@ describe('uninspected', () => {
     it('should log to the console', () => {
       uninspected.outputFormat = 'text';
       uninspected.log('abc', { foo: true });
-      expect(console.log, 'was called with', 'abc { foo: true }');
+      expect(console.log, 'to have a call satisfying', ['abc { foo: true }']);
       console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
     });
 

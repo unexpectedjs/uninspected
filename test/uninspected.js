@@ -13,6 +13,7 @@ describe('uninspected', () => {
 
   describe('#inspect', () => {
     it('should produce colored output', () => {
+      uninspected.outputFormat = 'ansi'; // set default for environment immunity
       expect(
         uninspected.inspect({ foo: 'abc' }),
         'to equal',

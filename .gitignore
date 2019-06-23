@@ -1,5 +1,6 @@
 /node_modules/
 /coverage/
 /uninspected.js
+/uninspected.js.map
 /bookmarklet.html
 /.nyc_output/

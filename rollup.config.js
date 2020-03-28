@@ -8,8 +8,8 @@ module.exports = {
       output: {
         comments(node, comment) {
           return /^!|@preserve|@license|@cc_on/i.test(comment.value);
-        }
-      }
-    })
-  ]
+        },
+      },
+    }),
+  ],
 };

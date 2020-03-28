@@ -25,8 +25,8 @@ describe('uninspected', () => {
       expect(
         uninspected.inspect({
           foo: {
-            foo: { foo: { foo: { foo: { foo: { foo: { foo: 123 } } } } } }
-          }
+            foo: { foo: { foo: { foo: { foo: { foo: { foo: 123 } } } } } },
+          },
         }),
         'to equal',
         '{ foo: { foo: { foo: { foo: { foo: { foo: { foo: ... } } } } } } }'
@@ -58,7 +58,7 @@ describe('uninspected', () => {
       uninspected.outputFormat = 'ansi';
       uninspected.log('abc', { foo: 'abc' });
       expect(console.log.args[0], 'to equal', [
-        "abc { \u001b[90m\u001b[38;5;242mfoo\u001b[39m: \u001b[36m'abc'\u001b[39m }"
+        "abc { \u001b[90m\u001b[38;5;242mfoo\u001b[39m: \u001b[36m'abc'\u001b[39m }",
       ]);
       console.log.restore(); // Cannot do this in an afterEach as it'll suppress mocha's output
     });

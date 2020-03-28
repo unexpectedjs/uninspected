@@ -32,7 +32,7 @@
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.js'",
     "test": "mocha",
-    "ci": "npm test && npm run lint && npm run coverage",
+    "test:ci": "npm run coverage",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
     "build": "rollup --config rollup.config.js --sourcemap --format umd --name uninspected -o uninspected.js lib/uninspected.js",
     "bookmarklet": "npm run build && (echo -n '<!DOCTYPE html><html><body><a href=\"javascript:' && <uninspected.js sed -e 's/&/\\&amp;/g;' | sed -e 's/\"/\\&quot;/g;' | tr --delete '\\n' && echo -n '%0a;console=uninspected;void(null);\">Replace the console object with uninspected</a></body></html>') > bookmarklet.html",

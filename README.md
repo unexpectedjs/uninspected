@@ -42,3 +42,7 @@ console.trace();
 In the Chrome console this will produce colored output using [this API](https://developer.chrome.com/devtools/docs/console#styling-console-output-with-css).
 
 The `uninspected` npm package includes a bookmarklet for doing the above, ie. replacing the `console` object with uninspected, see `bookmarklet.html` at the root of the package. Unfortunately github doesn't permit putting it directly into this README.
+
+## RELEASES
+
+See the [changelog](CHANGELOG.md).

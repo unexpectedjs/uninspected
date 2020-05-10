@@ -2,3 +2,6 @@ package.json
 /coverage/
 /.nyc_output/
 /node_modules/
+
+# Generated
+/CHANGELOG.md

@@ -1,5 +1,4 @@
-uninspected
-===========
+# uninspected
 
 Replacement for util.inspect and the console object.
 
@@ -11,22 +10,22 @@ Replacement for util.inspect and the console object.
 ```javascript
 var uninspected = require('uninspected');
 
-var str = uninspected.inspect({foo: 'bar'}); // "{ foo: 'bar' }"
+var str = uninspected.inspect({ foo: 'bar' }); // "{ foo: 'bar' }"
 
-uninspected.log('foo', {bar: /hey/}); // { bar: /hey/ }
+uninspected.log('foo', { bar: /hey/ }); // { bar: /hey/ }
 
 // Or use this shorthand:
-uninspected('foo', {bar: /hey/}); // { bar: /hey/ }
+uninspected('foo', { bar: /hey/ }); // { bar: /hey/ }
 ```
 
 The library also includes diffing support (powered by Unexpected's diffing engine):
 
 ```javascript
-uninspected.diff({foo: 'bar'}, {foo: 'baz'});
+uninspected.diff({ foo: 'bar' }, { foo: 'baz' });
 {
-  foo: 'bar' // should be 'baz'
-             // -bar
-             // +baz
+  foo: 'bar'; // should be 'baz'
+  // -bar
+  // +baz
 }
 ```
 

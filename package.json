@@ -28,7 +28,7 @@
     "rollup-plugin-node-resolve": "^5.0.4",
     "rollup-plugin-terser": "^7.0.0",
     "sinon": "^9.0.0",
-    "unexpected-sinon": "^10.11.0"
+    "unexpected-sinon": "^11.0.0"
   },
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.{js,md}'",

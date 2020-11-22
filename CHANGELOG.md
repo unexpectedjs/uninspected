@@ -1,3 +1,36 @@
+### v4.0.0 (2020-11-22)
+
+#### Pull requests
+
+- [#47](https://github.com/papandreou/uninspected/pull/47) Upgrade prettier to version 2.2.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#44](https://github.com/papandreou/uninspected/pull/44) Upgrade offline-github-changelog to version 2.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#43](https://github.com/papandreou/uninspected/pull/43) Upgrade eslint-config-standard to version 16.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#42](https://github.com/papandreou/uninspected/pull/42) Upgrade eslint-config-standard to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#38](https://github.com/papandreou/uninspected/pull/38) Upgrade prettier to version 2.1.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#37](https://github.com/papandreou/uninspected/pull/37) Upgrade rollup-plugin-terser to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#36](https://github.com/papandreou/uninspected/pull/36) Upgrade eslint-plugin-mocha to version 8.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#32](https://github.com/papandreou/uninspected/pull/32) Upgrade rollup-plugin-terser to version 6.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#31](https://github.com/papandreou/uninspected/pull/31) Upgrade eslint-plugin-mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#30](https://github.com/papandreou/uninspected/pull/30) Upgrade eslint to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#27](https://github.com/papandreou/uninspected/pull/27) Upgrade rollup to version 2.0.3 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#25](https://github.com/papandreou/uninspected/pull/25) Upgrade sinon to version 9.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#24](https://github.com/papandreou/uninspected/pull/24) Upgrade mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#23](https://github.com/papandreou/uninspected/pull/23) Upgrade magicpen-prism to version 4.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#22](https://github.com/papandreou/uninspected/pull/22) Upgrade eslint-plugin-node to version 11.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#20](https://github.com/papandreou/uninspected/pull/20) Upgrade nyc to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#21](https://github.com/papandreou/uninspected/pull/21) Upgrade sinon to version 8.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#19](https://github.com/papandreou/uninspected/pull/19) Upgrade eslint-plugin-node to version 10.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#18](https://github.com/papandreou/uninspected/pull/18) Upgrade eslint-config-standard to version 14.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Drop support for node.js 8, add 14, lint with 14 \(semver-major\)](https://github.com/papandreou/uninspected/commit/1594a832565825b785e244488f74e874effe7ef6) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Update unexpected to ^12.0.0](https://github.com/papandreou/uninspected/commit/a7a297921f2846eefbef93bd39c0af77404a8cde) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Update unexpected-sinon to ^11.0.0](https://github.com/papandreou/uninspected/commit/b41676ce623397a011cde10ecd54ab8c7afb48ae) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Add CHANGELOG.md + github-offline-changelog integration](https://github.com/papandreou/uninspected/commit/554b21bc59dce302ed65bbece7c191c0af55b2a6) ([Andreas Lind](mailto:andreas.lind@peakon.com))
+- [prettier --write '\*\*\/\*.md'](https://github.com/papandreou/uninspected/commit/f39abefc658d66b4ba2a431909f62f2b88a47784) ([Andreas Lind](mailto:andreas.lind@peakon.com))
+- [+9 more](https://github.com/papandreou/uninspected/compare/v3.0.1...v4.0.0)
+
 ### v3.0.1 (2019-06-23)
 
 #### Pull requests

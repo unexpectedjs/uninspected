@@ -29,6 +29,27 @@ uninspected.diff({ foo: 'bar' }, { foo: 'baz' });
 }
 ```
 
+Or if you want to get the rendered diff as a string:
+
+```javascript
+const diff = uninspected.diffAsString({ foo: 'bar' }, { foo: 'baz' });
+```
+
+You can also ask for the diff with ANSI codes, or in HTML format:
+
+```javascript
+const ansiDiff = uninspected.diffAsString(
+  { foo: 'bar' },
+  { foo: 'baz' },
+  'ansi'
+);
+const htmlDiff = uninspected.diffAsString(
+  { foo: 'bar' },
+  { foo: 'baz' },
+  'html'
+);
+```
+
 You can also use it instead of the console object:
 
 ```javascript

@@ -71,6 +71,47 @@ describe('uninspected', () => {
     });
   });
 
+  describe('#diffAsString', () => {
+    it('should render a diff in text format by default', () => {
+      expect(
+        uninspected.diffAsString({ foo: 'bar' }, { foo: 'baz' }),
+        'to equal',
+        '{\n' +
+          "  foo: 'bar' // should equal 'baz'\n" +
+          '             //\n' +
+          '             // -bar\n' +
+          '             // +baz\n' +
+          '}'
+      );
+    });
+
+    it('should render a diff in ansi format if requested', () => {
+      expect(
+        uninspected.diffAsString({ foo: 'bar' }, { foo: 'baz' }, 'ansi'),
+        'to equal',
+        '{\n' +
+          "  \x1b[90m\x1b[38;5;242mfoo\x1b[39m: \x1b[36m'bar'\x1b[39m \x1b[31m\x1b[1m//\x1b[22m\x1b[39m \x1b[31m\x1b[1mshould equal\x1b[22m\x1b[39m \x1b[36m'baz'\x1b[39m\n" +
+          '             \x1b[31m\x1b[1m//\x1b[22m\x1b[39m\n' +
+          '             \x1b[31m\x1b[1m//\x1b[22m\x1b[39m \x1b[41m\x1b[30mbar\x1b[39m\x1b[49m\n' +
+          '             \x1b[31m\x1b[1m//\x1b[22m\x1b[39m \x1b[42m\x1b[30mbaz\x1b[39m\x1b[49m\n' +
+          '}'
+      );
+    });
+
+    it('should render the actual value if there is no diff', () => {
+      expect(
+        uninspected.diffAsString({ foo: 'bar' }, { foo: 'bar' }),
+        'to equal',
+        "{\n  foo: 'bar'\n}"
+      );
+    });
+
+    it('should do something reasonable when diffing primitive values with no specific built-in diff', () => {
+      uninspected.outputFormat = 'text';
+      expect(uninspected.diffAsString(123, 456), 'to equal', '-123\n+456');
+    });
+  });
+
   describe('#diff', () => {
     beforeEach(() => {
       sinon.stub(console, 'log');

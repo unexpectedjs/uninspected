@@ -1,3 +1,9 @@
+### v5.0.0 (2023-10-30)
+
+- [Disable diffLimit for all of Unexpected's built in types](https://github.com/unexpectedjs/uninspected/commit/857da6df0ddd0e0d959951fb714c1ccefabec56c) ([Andreas Lind](mailto:andreas.lind@workday.com))
+- [diffAsString: Take an options object instead of just format](https://github.com/unexpectedjs/uninspected/commit/ba1534af76cbd54741184c6c8a1ad847a3308ea2) ([Andreas Lind](mailto:andreas.lind@workday.com))
+- [Require node.js 18+ \(semver-major\)](https://github.com/unexpectedjs/uninspected/commit/5dc9f4d2d4580b99743da50f4a26b4908de814b1) ([Andreas Lind](mailto:andreas.lind@workday.com))
+
 ### v4.2.0 (2023-10-30)
 
 - [Expose unexpected.equal](https://github.com/unexpectedjs/uninspected/commit/68a34987f3e11e7c0001b51e6636392f3a826036) ([Andreas Lind](mailto:andreas.lind@workday.com))

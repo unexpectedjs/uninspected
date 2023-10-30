@@ -87,7 +87,11 @@ describe('uninspected', () => {
 
     it('should render a diff in ansi format if requested', () => {
       expect(
-        uninspected.diffAsString({ foo: 'bar' }, { foo: 'baz' }, 'ansi'),
+        uninspected.diffAsString(
+          { foo: 'bar' },
+          { foo: 'baz' },
+          { format: 'ansi' }
+        ),
         'to equal',
         '{\n' +
           "  \x1b[90m\x1b[38;5;242mfoo\x1b[39m: \x1b[36m'bar'\x1b[39m \x1b[31m\x1b[1m//\x1b[22m\x1b[39m \x1b[31m\x1b[1mshould equal\x1b[22m\x1b[39m \x1b[36m'baz'\x1b[39m\n" +

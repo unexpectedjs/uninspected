@@ -48,12 +48,12 @@ You can also ask for the diff with ANSI codes, or in HTML format:
 const ansiDiff = uninspected.diffAsString(
   { foo: 'bar' },
   { foo: 'baz' },
-  'ansi'
+  { format: 'ansi' }
 );
 const htmlDiff = uninspected.diffAsString(
   { foo: 'bar' },
   { foo: 'baz' },
-  'html'
+  { format: 'html' }
 );
 ```
 

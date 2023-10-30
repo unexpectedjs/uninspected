@@ -1,3 +1,7 @@
+### v4.2.0 (2023-10-30)
+
+- [Expose unexpected.equal](https://github.com/unexpectedjs/uninspected/commit/68a34987f3e11e7c0001b51e6636392f3a826036) ([Andreas Lind](mailto:andreas.lind@workday.com))
+
 ### v4.1.0 (2023-10-27)
 
 #### Pull requests

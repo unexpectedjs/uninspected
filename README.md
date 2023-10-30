@@ -35,6 +35,13 @@ Or if you want to get the rendered diff as a string:
 const diff = uninspected.diffAsString({ foo: 'bar' }, { foo: 'baz' });
 ```
 
+You can use the `equal` function if you just want to compare two values for equality:
+
+```javascript
+uninspected.equal({ foo: 123 }, { foo: 123 }); // returns true
+uninspected.equal({ abc: 123 }, { def: 456 }); // returns false
+```
+
 You can also ask for the diff with ANSI codes, or in HTML format:
 
 ```javascript

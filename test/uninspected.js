@@ -148,4 +148,14 @@ describe('uninspected', () => {
       }
     });
   });
+
+  describe('#equal', () => {
+    it('should return true when the two parameters equal', () => {
+      expect(uninspected.equal({ foo: 123 }, { foo: 123 }), 'to be true');
+    });
+
+    it('should return false when the two parameters differ', () => {
+      expect(uninspected.equal({ foo: 123 }, { foo: 456 }), 'to be false');
+    });
+  });
 });

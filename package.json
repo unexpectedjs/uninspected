@@ -4,7 +4,7 @@
   "description": "util.inspect replacement based on Unexpected's output and type system",
   "main": "./lib/uninspected",
   "dependencies": {
-    "eslint-plugin-n": "^15.1.0",
+    "eslint-plugin-n": "^16.3.1",
     "magicpen-prism": "^5.0.0",
     "unexpected": "^13.0.1"
   },
